@@ -25,8 +25,10 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
     event.preventDefault();
-    
-    if (formValues.email && formValues.message) {
+
+    if (email.value && message.value) {
+        formValues.email = email.value;
+        formValues.message = message.value;
         console.log(formValues);
         email.value = '';
         message.value = '';
