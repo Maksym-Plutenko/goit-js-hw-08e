@@ -25,8 +25,13 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
     event.preventDefault();
-    console.log(formValues);
-    email.value = '';
-    message.value = '';
-    localStorage.removeItem("feedback-form-state");
+    
+    if (formValues.email && formValues.message) {
+        console.log(formValues);
+        email.value = '';
+        message.value = '';
+        formValues.email = '';
+        formValues.message = '';
+        localStorage.removeItem("feedback-form-state");
+    }
 }
